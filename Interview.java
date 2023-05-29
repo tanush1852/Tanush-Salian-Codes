@@ -112,23 +112,28 @@ class Testing extends Recruitment{
     }
 
     public void generateResult()
-    {   int temp=2,sum=0;
+    {  int sum=0,cou=0;
 
 
         for(int i=0;i<8;i++) {
 
-           System.out.println("Marks for round:"+temp);
-           if((i+1)%2==0){
-               temp++;
-           }
-            System.out.println(arr[i] + "/10");
-
             sum = sum + arr[i];
 
+        }
+        for(int i=1;i<=4;i++)
+        {
+            System.out.println("Marks for Interview Round:"+i);
+            for(int j=1;j<=2;j++)
+            {
+                System.out.println("Q"+j+":"+arr[cou]+"/10");
+                cou++;
+            }
+            System.out.println();
         }
 
         double percent=(sum*100.0)/80.0;
         super.recruit(percent);
+ 
 
 
     }
